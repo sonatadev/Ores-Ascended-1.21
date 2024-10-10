@@ -5,12 +5,10 @@ import com.github.oresascended.item.ItemInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -35,8 +33,10 @@ public class ModCreativeModeTabs {
                         BlockInit.BLOCKS.getEntries().forEach(deferredBlock -> {
                             Block block = deferredBlock.get();
                             if (block != null) {
-                                ItemStack itemStack = new ItemStack(block.asItem(), 1);
-                                if (itemStack.getCount() != 1) {
+                                ItemStack itemStack = new ItemStack(block.asItem());
+                                if (itemStack.isEmpty()) {
+                                    LOGGER.warning("Block " + block + " has an invalid item stack");
+                                } else if (itemStack.getCount() != 1) {
                                     LOGGER.warning("Block " + block + " has an invalid stack count: " + itemStack.getCount());
                                 } else {
                                     output.accept(itemStack);
@@ -49,7 +49,9 @@ public class ModCreativeModeTabs {
                             Item item = deferredItem.get();
                             if (item != null) {
                                 ItemStack itemStack = new ItemStack(item, 1);
-                                if (itemStack.getCount() != 1) {
+                                if (itemStack.isEmpty()) {
+                                    LOGGER.warning("Item " + item + " has an invalid item stack");
+                                } else if (itemStack.getCount() != 1) {
                                     LOGGER.warning("Item " + item + " has an invalid stack count: " + itemStack.getCount());
                                 } else {
                                     output.accept(itemStack);
@@ -71,7 +73,9 @@ public class ModCreativeModeTabs {
                             Block block = deferredBlock.get();
                             if (block != null) {
                                 ItemStack itemStack = new ItemStack(block.asItem(), 1);
-                                if (itemStack.getCount() != 1) {
+                                if (itemStack.isEmpty()) {
+                                    LOGGER.warning("Block " + block + " has an invalid item stack");
+                                } else if (itemStack.getCount() != 1) {
                                     LOGGER.warning("Block " + block + " has an invalid stack count: " + itemStack.getCount());
                                 } else {
                                     output.accept(itemStack);
@@ -83,7 +87,9 @@ public class ModCreativeModeTabs {
                             Item item = deferredItem.get();
                             if (item != null) {
                                 ItemStack itemStack = new ItemStack(item, 1);
-                                if (itemStack.getCount() != 1) {
+                                if (itemStack.isEmpty()) {
+                                    LOGGER.warning("Item " + item + " has an invalid item stack");
+                                } else if (itemStack.getCount() != 1) {
                                     LOGGER.warning("Item " + item + " has an invalid stack count: " + itemStack.getCount());
                                 } else {
                                     output.accept(itemStack);
