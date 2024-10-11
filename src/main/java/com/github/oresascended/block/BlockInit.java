@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class BlockInit {
 
     private static final String MODID = OresAscended.MODID;
-
+    //blocks container
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     // Creates a new Block with the id "oresascended:sapphire_block", combining the namespace and path
     public static final DeferredBlock<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
@@ -29,19 +29,28 @@ public class BlockInit {
                     .requiresCorrectToolForDrops()
             ));
 
+
+    // Creates a new Block with the id "oresascended:tourmaline_block", combining the namespace and path
+    public static final DeferredBlock<Block> TOURMALINE_BLOCK = registerBlock("tourmaline_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.NETHERITE_BLOCK)
+                    .explosionResistance(7f)
+                    .strength(7f)
+                    .requiresCorrectToolForDrops()
+            ));
+    
+    
+    //register blocks
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
-
+    //register block items
     private static final <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
         ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-
-    //blocks container
-
-
-
+    //registr to the event bus
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
     }

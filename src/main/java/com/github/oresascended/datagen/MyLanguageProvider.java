@@ -41,11 +41,11 @@
         @Override
         protected void addTranslations() {
             // Adds a block translation.
-            for(DeferredHolder<Block, ? extends Block> deferredBlock : BlockInit.BLOCKS.getEntries()){
+          /*  for(DeferredHolder<Block, ? extends Block> deferredBlock : BlockInit.BLOCKS.getEntries()){
                 String name = formatName(deferredBlock.getId().getPath());
                 //add(deferredBlock.get(), name);
                 addBlock(deferredBlock, name);
-            }
+            }*/
 
             // Adds an item translation.
             for(DeferredHolder<Item, ? extends Item> deferredItem : ItemInit.ITEMS.getEntries()){

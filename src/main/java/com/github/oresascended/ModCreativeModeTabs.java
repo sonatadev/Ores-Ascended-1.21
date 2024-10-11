@@ -4,6 +4,7 @@ import com.github.oresascended.block.BlockInit;
 import com.github.oresascended.item.ItemInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -44,7 +45,7 @@ public class ModCreativeModeTabs {
                             }
                         });
 
-                        // Adding items
+                        // Adding Items
                         ItemInit.ITEMS.getEntries().forEach(deferredItem -> {
                             Item item = deferredItem.get();
                             if (item != null) {
@@ -62,7 +63,7 @@ public class ModCreativeModeTabs {
                     .build());
 
     // Uncomment and modify if additional creative tabs are needed
-    /*
+
     public static final Supplier<CreativeModeTab> ORES_ASCENDED_EVOLVED_TAB = CREATIVE_MODE_TAB.register("ores_ascended_evolved_tab",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(BlockInit.SAPPHIRE_BLOCK.get()))
@@ -98,5 +99,5 @@ public class ModCreativeModeTabs {
                         });
                     })
                     .build());
-    */
+
 }

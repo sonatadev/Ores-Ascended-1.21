@@ -45,8 +45,8 @@ public class OresAscended {
 
     public OresAscended(IEventBus modEventBus, ModContainer modContainer) {
         //stuff registration
-        ItemInit.ITEMS.register(modEventBus);
-        BlockInit.BLOCKS.register(modEventBus);
+        ItemInit.register(modEventBus);
+        BlockInit.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
