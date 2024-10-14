@@ -1,2 +1,7 @@
-// 1.21	2024-10-14T17:21:34.1443651	Tags for minecraft:item mod id oresascended
+// 1.21	2024-10-14T18:50:56.0802693	Tags for minecraft:item mod id oresascended
+b38b11ee0b851ed856730d343a587bdf7c48435b data/minecraft/tags/item/axes.json
+8b93132264d609bfb3a40b03cae00699a9942b5f data/minecraft/tags/item/hoes.json
+d19a5c1914ccc1dd863729445b154e369819c688 data/minecraft/tags/item/pickaxes.json
+effc31f95287430b82f6fb5a449c8b48e1db0bbb data/minecraft/tags/item/shovels.json
+985a7a481cb1e10cef4b3355113b2aacb2826df4 data/minecraft/tags/item/swords.json
 1f49d251be683a2d43d864c3209193e570cf43e5 data/oresascended/tags/item/alloyed_items.json

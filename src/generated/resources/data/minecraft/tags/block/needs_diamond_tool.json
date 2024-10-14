@@ -1,7 +1,5 @@
 {
   "values": [
-    "oresascended:sapphire_block",
-    "oresascended:sapphire_ore",
-    "oresascended:deepslate_sapphire_ore"
+    "#oresascended:needs_sapphire_tool"
   ]
 }

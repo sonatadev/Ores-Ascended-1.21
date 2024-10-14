@@ -1,6 +1,5 @@
 {
   "values": [
-    "oresascended:ruby_ore",
-    "oresascended:deepslate_ruby_ore"
+    "#minecraft:needs_diamond_tool"
   ]
 }
