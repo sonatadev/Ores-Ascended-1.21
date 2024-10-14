@@ -21,12 +21,7 @@ public class MyItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         // Simple item JSON generation
         for (DeferredHolder<Item, ? extends Item> deferredItem : ItemInit.ITEMS.getEntries()) {
-            if (deferredItem.get() instanceof BlockItem ||
-                    deferredItem.get() instanceof SwordItem ||
-                    deferredItem.get() instanceof PickaxeItem ||
-                    deferredItem.get() instanceof AxeItem ||
-                    deferredItem.get() instanceof ShovelItem ||
-                    deferredItem.get() instanceof HoeItem) {
+            if (deferredItem.get() instanceof BlockItem || deferredItem.get() instanceof TieredItem) {
                 continue;
             }
             basicItem(deferredItem.get());
@@ -38,6 +33,12 @@ public class MyItemModelProvider extends ItemModelProvider {
         handheldItem(ItemInit.SAPPHIRE_AXE);
         handheldItem(ItemInit.SAPPHIRE_SHOVEL);
         handheldItem(ItemInit.SAPPHIRE_HOE);
+        //ruby
+        handheldItem(ItemInit.RUBY_SWORD);
+        handheldItem(ItemInit.RUBY_PICKAXE);
+        handheldItem(ItemInit.RUBY_AXE);
+        handheldItem(ItemInit.RUBY_SHOVEL);
+        handheldItem(ItemInit.RUBY_HOE);
         //celestium
         handheldItem(ItemInit.CELESTIUM_SWORD);
         handheldItem(ItemInit.CELESTIUM_PICKAXE);

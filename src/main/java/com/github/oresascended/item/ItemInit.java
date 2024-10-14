@@ -36,11 +36,13 @@ public class ItemInit {
     //alloyed ores
     public static final DeferredItem<Item> AQUAMARINE = ITEMS.register("aquamarine",
             () -> new Item(new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
             ));
 
     public static final DeferredItem<Item> CELESTIUM = ITEMS.register("celestium",
             () -> new Item(new Item.Properties()
                     .fireResistant()
+                    .rarity(Rarity.RARE)
             ));
 
     public static final DeferredItem<Item> CRIMSONITE = ITEMS.register("crimsonite",
@@ -52,49 +54,71 @@ public class ItemInit {
     //tools
     //sapphire
     public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
-            () ->  new SwordItem(Tiers.DIAMOND, new Item.Properties().attributes(SwordItem.createAttributes(
-                    Tiers.DIAMOND, 3, -2.4f
+            () ->  new SwordItem(MyToolTiers.SAPPHIRE_TIER, new Item.Properties().attributes(SwordItem.createAttributes(
+                    MyToolTiers.SAPPHIRE_TIER, 3, -2.4f
             ))));
     public static final DeferredItem<PickaxeItem> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
-            () ->  new PickaxeItem(Tiers.DIAMOND, new Item.Properties().attributes(PickaxeItem.createAttributes(
-                    Tiers.DIAMOND, 1, -2.8f
+            () ->  new PickaxeItem(MyToolTiers.SAPPHIRE_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(
+                    MyToolTiers.SAPPHIRE_TIER, 1, -2.8f
             ))));
     public static final DeferredItem<AxeItem> SAPPHIRE_AXE = ITEMS.register("sapphire_axe",
-            () ->  new AxeItem(Tiers.DIAMOND, new Item.Properties().attributes(AxeItem.createAttributes(
-                    Tiers.DIAMOND, 6, -3.2f
+            () ->  new AxeItem(MyToolTiers.SAPPHIRE_TIER, new Item.Properties().attributes(AxeItem.createAttributes(
+                    MyToolTiers.SAPPHIRE_TIER, 6, -3.2f
             ))));
     public static final DeferredItem<ShovelItem> SAPPHIRE_SHOVEL = ITEMS.register("sapphire_shovel",
-            () ->  new ShovelItem(Tiers.DIAMOND, new Item.Properties().attributes(ShovelItem.createAttributes(
-                    Tiers.DIAMOND, 1.5f, -3.0f
+            () ->  new ShovelItem(MyToolTiers.SAPPHIRE_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(
+                    MyToolTiers.SAPPHIRE_TIER, 1.5f, -3.0f
             ))));
     public static final DeferredItem<HoeItem> SAPPHIRE_HOE = ITEMS.register("sapphire_hoe",
-            () ->  new HoeItem(Tiers.DIAMOND, new Item.Properties().attributes(HoeItem.createAttributes(
-                    Tiers.DIAMOND, 5, 3
+            () ->  new HoeItem(MyToolTiers.SAPPHIRE_TIER, new Item.Properties().attributes(HoeItem.createAttributes(
+                    MyToolTiers.SAPPHIRE_TIER, 0, -3.0f
             ))));
+    //ruby
+    public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
+            () -> new SwordItem(MyToolTiers.RUBY_TIER, new Item.Properties().attributes(SwordItem.createAttributes(
+                    MyToolTiers.RUBY_TIER, 3, -2.4f
+            ))));
+    public static final DeferredItem<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
+            () -> new PickaxeItem(MyToolTiers.RUBY_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(
+                    MyToolTiers.RUBY_TIER, 1, -2.8f
+            ))));
+    public static final DeferredItem<AxeItem> RUBY_AXE = ITEMS.register("ruby_axe",
+            () -> new AxeItem(MyToolTiers.RUBY_TIER, new Item.Properties().attributes(AxeItem.createAttributes(
+                    MyToolTiers.RUBY_TIER, 6, -3.2f
+            ))));
+    public static final DeferredItem<ShovelItem> RUBY_SHOVEL = ITEMS.register("ruby_shovel",
+            () -> new ShovelItem(MyToolTiers.RUBY_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(
+                    MyToolTiers.RUBY_TIER, 1.5f, -3.0f
+            ))));
+    public static final DeferredItem<HoeItem> RUBY_HOE = ITEMS.register("ruby_hoe",
+            () -> new HoeItem(MyToolTiers.RUBY_TIER, new Item.Properties().attributes(HoeItem.createAttributes(
+                    MyToolTiers.RUBY_TIER, 0, -3.0f
+            ))));
+
     //celestium
     public static final DeferredItem<SwordItem> CELESTIUM_SWORD = ITEMS.register("celestium_sword",
-            () -> new SwordItem(Tiers.DIAMOND, new Item.Properties().attributes(SwordItem.createAttributes(
-                    Tiers.DIAMOND, 3, -2.4f
+            () -> new SwordItem(MyToolTiers.CELESTIUM_TIER, new Item.Properties().attributes(SwordItem.createAttributes(
+                    MyToolTiers.CELESTIUM_TIER, 3, -2.4f
             ))));
 
     public static final DeferredItem<PickaxeItem> CELESTIUM_PICKAXE = ITEMS.register("celestium_pickaxe",
-            () -> new PickaxeItem(Tiers.DIAMOND, new Item.Properties().attributes(PickaxeItem.createAttributes(
-                    Tiers.DIAMOND, 1, -2.8f
+            () -> new PickaxeItem(MyToolTiers.CELESTIUM_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(
+                    MyToolTiers.CELESTIUM_TIER, 1, -2.8f
             ))));
 
     public static final DeferredItem<AxeItem> CELESTIUM_AXE = ITEMS.register("celestium_axe",
-            () -> new AxeItem(Tiers.DIAMOND, new Item.Properties().attributes(AxeItem.createAttributes(
-                    Tiers.DIAMOND, 6, -3.2f
+            () -> new AxeItem(MyToolTiers.CELESTIUM_TIER, new Item.Properties().attributes(AxeItem.createAttributes(
+                    MyToolTiers.CELESTIUM_TIER, 6, -3.2f
             ))));
 
     public static final DeferredItem<ShovelItem> CELESTIUM_SHOVEL = ITEMS.register("celestium_shovel",
-            () -> new ShovelItem(Tiers.DIAMOND, new Item.Properties().attributes(ShovelItem.createAttributes(
-                    Tiers.DIAMOND, 1.5f, -3.0f
+            () -> new ShovelItem(MyToolTiers.CELESTIUM_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(
+                    MyToolTiers.CELESTIUM_TIER, 1.5f, -3.0f
             ))));
 
     public static final DeferredItem<HoeItem> CELESTIUM_HOE = ITEMS.register("celestium_hoe",
-            () -> new HoeItem(Tiers.DIAMOND, new Item.Properties().attributes(HoeItem.createAttributes(
-                    Tiers.DIAMOND, 5, 3
+            () -> new HoeItem(MyToolTiers.CELESTIUM_TIER, new Item.Properties().attributes(HoeItem.createAttributes(
+                    MyToolTiers.CELESTIUM_TIER, 0, -3.0f
             ))));
 
 

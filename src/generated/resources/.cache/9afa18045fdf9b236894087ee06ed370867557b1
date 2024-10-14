@@ -1,4 +1,4 @@
-// 1.21	2024-10-14T18:50:56.0822698	Item Models: oresascended
+// 1.21	2024-10-14T22:34:03.228267557	Item Models: oresascended
 86c8d80efd0da3ed2ec21c43a1c459da4ff4c49a assets/oresascended/models/item/aquamarine.json
 06ffbd08b3eb17240f815aa7ef67b356c314d163 assets/oresascended/models/item/brightcoal.json
 25e6a3163a8ab74cddfd5b324930e0f02cef8ecf assets/oresascended/models/item/celestium.json
@@ -13,6 +13,11 @@ bc2103ec3bc97e5b811464ec6cda9cff73fcccb2 assets/oresascended/models/item/celesti
 9eb189078d2a69cfbe72c82963c742c89bcabf26 assets/oresascended/models/item/celestium_sword.json
 6fb71d2721dc2818985f0c225a2d1b9b9e436a53 assets/oresascended/models/item/crimsonite.json
 089048ddba43434f891d4c6060eebd58f0fe085a assets/oresascended/models/item/ruby.json
+74dfb681734a9d7be61c62b8ce0e7b8f963bd456 assets/oresascended/models/item/ruby_axe.json
+1bcbb3253592d134057a02b1a6e7df0a6f7cd95d assets/oresascended/models/item/ruby_hoe.json
+9c44c6dd577a24102c747f5e913e282610402684 assets/oresascended/models/item/ruby_pickaxe.json
+02f190e2be054717ee8f73aed43301df1fe4f672 assets/oresascended/models/item/ruby_shovel.json
+3b1e6121e0d9387c610d0f0423cdc5485400212f assets/oresascended/models/item/ruby_sword.json
 a54f7ca8b8b14de74fd01d54d535b69ad1cf2865 assets/oresascended/models/item/sapphire.json
 3696d88cf20e6d6e3d8218e258d2cce9a021842b assets/oresascended/models/item/sapphire_axe.json
 56c4063ad980f25368aff61281605aa8e1110cdc assets/oresascended/models/item/sapphire_boots.json

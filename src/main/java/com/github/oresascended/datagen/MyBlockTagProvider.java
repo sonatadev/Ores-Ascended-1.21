@@ -4,6 +4,7 @@ import com.github.oresascended.OresAscended;
 import com.github.oresascended.block.BlockInit;
 import com.github.oresascended.item.TagsInit;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.Tags;
@@ -26,21 +27,31 @@ public class MyBlockTagProvider extends BlockTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(deferredBlock.get());
         });
 
-
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(BlockInit.SAPPHIRE_BLOCK.get())
+                .add(BlockInit.SAPPHIRE_ORE.get())
+                .add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get());
+        tag(Tags.Blocks.NEEDS_GOLD_TOOL)
+                .addTags(BlockTags.NEEDS_IRON_TOOL);
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .addTag(TagsInit.Blocks.NEEDS_SAPPHIRE_TOOL);
+                .add(BlockInit.RUBY_BLOCK.get())
+                .add(BlockInit.RUBY_ORE.get())
+                .add(BlockInit.DEEPSLATE_RUBY_ORE.get());
+        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
         //sapphire tags
         tag(TagsInit.Blocks.NEEDS_SAPPHIRE_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
         tag(TagsInit.Blocks.INCORRECT_FOR_SAPPHIRE)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .remove(TagsInit.Blocks.NEEDS_SAPPHIRE_TOOL);
         //ruby tags
         tag(TagsInit.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(BlockTags.NEEDS_DIAMOND_TOOL); //NEED TO CHANGE ASAP
+                .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL); //NEED TO CHANGE ASAP
 
         tag(TagsInit.Blocks.INCORRECT_FOR_RUBY)
-                .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
                 .remove(TagsInit.Blocks.NEEDS_RUBY_TOOL);
 
     }

@@ -1,5 +1,7 @@
 {
   "values": [
-    "#oresascended:needs_sapphire_tool"
+    "oresascended:ruby_block",
+    "oresascended:ruby_ore",
+    "oresascended:deepslate_ruby_ore"
   ]
 }
