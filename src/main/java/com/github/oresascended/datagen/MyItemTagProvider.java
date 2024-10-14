@@ -1,6 +1,7 @@
 package com.github.oresascended.datagen;
 
 import com.github.oresascended.OresAscended;
+import com.github.oresascended.item.ItemInit;
 import com.github.oresascended.item.TagsInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -18,6 +19,12 @@ public class MyItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        tag(TagsInit.Items.ALLOYED_ITEMS)
+                //fuel items
+                .add(ItemInit.BRIGHTCOAL.get())
+                .add(ItemInit.SHADOWFIRE_CORE.get())
+                //alloyed ores
+                .add(ItemInit.AQUAMARINE.get())
+                .add(ItemInit.CELESTIUM.get());
     }
 }

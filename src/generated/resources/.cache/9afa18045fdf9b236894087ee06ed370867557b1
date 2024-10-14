@@ -1,4 +1,6 @@
-// 1.21	2024-10-14T13:37:47.6166512	Item Models: oresascended
+// 1.21	2024-10-14T17:21:34.1483618	Item Models: oresascended
+86c8d80efd0da3ed2ec21c43a1c459da4ff4c49a assets/oresascended/models/item/aquamarine.json
+06ffbd08b3eb17240f815aa7ef67b356c314d163 assets/oresascended/models/item/brightcoal.json
 25e6a3163a8ab74cddfd5b324930e0f02cef8ecf assets/oresascended/models/item/celestium.json
 fa10f6c11493673e6ab904be3bb0b8b5e2f0b378 assets/oresascended/models/item/celestium_axe.json
 33624821c4b2da8482c42fc1f65d7b1204d0c6fd assets/oresascended/models/item/celestium_boots.json
@@ -20,3 +22,4 @@ ab3e2ca292a4f47ab99972022ca9c625a28fb1d5 assets/oresascended/models/item/sapphir
 2e6525dfa689ef33147bfed2d9bdd7de9415af86 assets/oresascended/models/item/sapphire_pickaxe.json
 0f1d9c036c37ec066dd93f225cc815a8bbaf1b19 assets/oresascended/models/item/sapphire_shovel.json
 2d3f9f72ed42ef0370eeeedcefae8179d39734b0 assets/oresascended/models/item/sapphire_sword.json
+ce0bed1d04296ebb627ac5d14997fb2ae5b86d80 assets/oresascended/models/item/shadowfire_core.json

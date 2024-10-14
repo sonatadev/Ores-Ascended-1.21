@@ -5,6 +5,10 @@
   "block.oresascended.ruby_ore": "Ruby Ore",
   "block.oresascended.sapphire_block": "Sapphire Block",
   "block.oresascended.sapphire_ore": "Sapphire Ore",
+  "creativetab.oresascended": "Ores Ascended Tab",
+  "creativetab.oresascendedevolved": "Ores Ascended Evolved Tab",
+  "item.oresascended.aquamarine": "Aquamarine",
+  "item.oresascended.brightcoal": "Brightcoal",
   "item.oresascended.celestium": "Celestium",
   "item.oresascended.celestium_axe": "Celestium Axe",
   "item.oresascended.celestium_boots": "Celestium Boots",
@@ -25,5 +29,6 @@
   "item.oresascended.sapphire_leggings": "Sapphire Leggings",
   "item.oresascended.sapphire_pickaxe": "Sapphire Pickaxe",
   "item.oresascended.sapphire_shovel": "Sapphire Shovel",
-  "item.oresascended.sapphire_sword": "Sapphire Sword"
+  "item.oresascended.sapphire_sword": "Sapphire Sword",
+  "item.oresascended.shadowfire_core": "Shadowfire Core"
 }

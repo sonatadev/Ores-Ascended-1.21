@@ -1,0 +1,10 @@
+{
+  "values": {
+    "oresascended:brightcoal": {
+      "burn_time": 3200
+    },
+    "oresascended:shadowfire_core": {
+      "burn_time": 6400
+    }
+  }
+}

@@ -12,6 +12,8 @@
     import net.neoforged.neoforge.common.data.LanguageProvider;
     import net.neoforged.neoforge.registries.DeferredHolder;
 
+    import java.util.function.Supplier;
+
     public class MyLanguageProvider extends LanguageProvider {
         public MyLanguageProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
             super(
@@ -57,7 +59,7 @@
             //adds creative mode tabs translation
             for(DeferredHolder<CreativeModeTab, ? extends CreativeModeTab> deferredTab : ModCreativeModeTabs.CREATIVE_MODE_TAB.getEntries()){
                 String name = formatName(deferredTab.getId().getPath());
-
+                addCreativeModeTab(deferredTab, name);
             }
             
             
@@ -77,5 +79,13 @@
     //        // Adds a mob effect translation.
     //        add(MyMobEffects.EXAMPLE_MOB_EFFECT.get(), "Example Effect");
     //        addEffect(MyMobEffects.EXAMPLE_MOB_EFFECT, "Example Effect");
+        }
+
+        public void addCreativeModeTab(Supplier<? extends CreativeModeTab> key, String name) {
+            add(key.get(), name);
+        }
+
+        public void add(CreativeModeTab key, String name) {
+            add(key.getDisplayName().getString(), name);
         }
     }

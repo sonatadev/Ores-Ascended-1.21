@@ -22,6 +22,7 @@ public class TagsInit {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(OresAscended.MODID, name));
         }
 
+        public static final TagKey<Item> ALLOYED_ITEMS = createTag("alloyed_items");
 
     }
 }

@@ -21,8 +21,7 @@ import java.util.concurrent.CompletableFuture;
 public class MyDatagenHandler {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event){
-        // Data generators may require some of these as constructor parameters.
-        // See below for more details on each of these.
+        //for the datagens parameter's
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
@@ -38,11 +37,6 @@ public class MyDatagenHandler {
                 event.includeClient(),
                 new MyItemModelProvider(output, existingFileHelper)
         );
-        //language provider
-        generator.addProvider(
-                event.includeClient(),
-                new MyLanguageProvider(output, existingFileHelper)
-        );
         //loot table provider
         generator.addProvider(
                 event.includeServer(),
@@ -56,6 +50,11 @@ public class MyDatagenHandler {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         //item tag provider
         generator.addProvider(event.includeServer(), new MyItemTagProvider(output, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-
+        //data map provide
+        generator.addProvider(event.includeServer(), new MyDataMapProvider(output, lookupProvider));
+        //language provider
+        generator.addProvider(
+                event.includeClient(),
+                new MyLanguageProvider(output, existingFileHelper));
     }
 }
