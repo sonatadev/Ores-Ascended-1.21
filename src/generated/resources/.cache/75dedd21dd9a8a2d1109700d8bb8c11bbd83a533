@@ -1,13 +1,7 @@
-// 1.21	2024-10-11T21:40:54.445139832	Block States: oresascended
-3d6b66e1b3dc070ff154d501f8a1a991ae38464a assets/oresascended/blockstates/obsidian_ruby_block.json
+// 1.21	2024-10-14T12:19:49.3587382	Block States: oresascended
 ddacaca402f16a20f63399d699f339e50b21eb8f assets/oresascended/blockstates/ruby_block.json
 94e1afaad4d32a16736539ef76aa34e236eaaee2 assets/oresascended/blockstates/sapphire_block.json
-874cffcf24bd992175f331d8a6cbdc9e6eee11ef assets/oresascended/blockstates/tourmaline_block.json
-d8ec3a6a2fa48f3644f31bab49097d84469de891 assets/oresascended/models/block/obsidian_ruby_block.json
 67c63155562aa6b35cf3fc9548adea841b309381 assets/oresascended/models/block/ruby_block.json
 b2ccb1fb1e11dae0c8981a494170d91ce41a7f8d assets/oresascended/models/block/sapphire_block.json
-38149b77f5fbd75125ec8aeea022c8c0c59d7abb assets/oresascended/models/block/tourmaline_block.json
-8fa3bbc9b753b2e92cc1674286c336a7af5104e0 assets/oresascended/models/item/obsidian_ruby_block.json
 d3ff83c9caa8dd9a9b38c45dca58ecad7d7fb708 assets/oresascended/models/item/ruby_block.json
 8a01278200c43d16b71219e76226427c267ad996 assets/oresascended/models/item/sapphire_block.json
-e673ce759d3a41940e320e7c81279771bdf2641f assets/oresascended/models/item/tourmaline_block.json

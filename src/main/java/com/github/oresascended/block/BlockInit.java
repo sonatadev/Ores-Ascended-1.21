@@ -28,13 +28,6 @@ public class BlockInit {
                     .strength(6f)
                     .requiresCorrectToolForDrops()
             ));
-    public static final DeferredBlock<Block> TOURMALINE_BLOCK = registerBlock("tourmaline_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.NETHERITE_BLOCK)
-                    .explosionResistance(7f)
-                    .strength(7f)
-                    .requiresCorrectToolForDrops()
-            ));
     public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST_CLUSTER)
@@ -42,13 +35,13 @@ public class BlockInit {
                     .strength(8f)
                     .requiresCorrectToolForDrops()
             ));
-    public static final DeferredBlock<Block> OBSIDIAN_RUBY_BLOCK = registerBlock("obsidian_ruby_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.LARGE_AMETHYST_BUD)
-                    .explosionResistance(12f)
-                    .strength(12f)
-                    .requiresCorrectToolForDrops()
-            ));
+//    public static final DeferredBlock<Block> OBSIDIAN_RUBY_BLOCK = registerBlock("obsidian_ruby_block",
+//            () -> new Block(BlockBehaviour.Properties.of()
+//                    .sound(SoundType.LARGE_AMETHYST_BUD)
+//                    .explosionResistance(12f)
+//                    .strength(12f)
+//                    .requiresCorrectToolForDrops()
+//            ));
     
     //register blocks
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

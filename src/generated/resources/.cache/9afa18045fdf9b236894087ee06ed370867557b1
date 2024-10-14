@@ -1,6 +1,21 @@
-// 1.21	2024-10-13T12:25:39.308575659	Item Models: oresascended
+// 1.21	2024-10-14T12:27:13.353027	Item Models: oresascended
+25e6a3163a8ab74cddfd5b324930e0f02cef8ecf assets/oresascended/models/item/celestium.json
+fa10f6c11493673e6ab904be3bb0b8b5e2f0b378 assets/oresascended/models/item/celestium_axe.json
+33624821c4b2da8482c42fc1f65d7b1204d0c6fd assets/oresascended/models/item/celestium_boots.json
+1ed6639868efd20723d269ba2fdfb61fc098edd9 assets/oresascended/models/item/celestium_chestplate.json
+d2169080f1cd78f49332ad8f65193bbab3cf0c0f assets/oresascended/models/item/celestium_helmet.json
+1a46b56ec0f6c95ef47ba78cac3cc3bc3165d81d assets/oresascended/models/item/celestium_hoe.json
+bc2103ec3bc97e5b811464ec6cda9cff73fcccb2 assets/oresascended/models/item/celestium_leggings.json
+e18b74b52f5e9570f63a43052af52415acf4213f assets/oresascended/models/item/celestium_pickaxe.json
+aea51b7227c6b1951b403dbed9d308313a43b39a assets/oresascended/models/item/celestium_shovel.json
+8bb65f88839d1f50eec1f2210a3e79b7b2f17236 assets/oresascended/models/item/celestium_sword.json
 a54f7ca8b8b14de74fd01d54d535b69ad1cf2865 assets/oresascended/models/item/sapphire.json
 8a03df53d6ad38b0d96b89dff1e386d5b398d8d0 assets/oresascended/models/item/sapphire_axe.json
+56c4063ad980f25368aff61281605aa8e1110cdc assets/oresascended/models/item/sapphire_boots.json
+7abf9784020495258707c05409083baffdf1a864 assets/oresascended/models/item/sapphire_chestplate.json
 1b55029313e3266eae8200747395846939e7335c assets/oresascended/models/item/sapphire_helmet.json
 efc82ecb145f669518e2e3de03e05f6e40af5f46 assets/oresascended/models/item/sapphire_hoe.json
+ab3e2ca292a4f47ab99972022ca9c625a28fb1d5 assets/oresascended/models/item/sapphire_leggings.json
+2e6525dfa689ef33147bfed2d9bdd7de9415af86 assets/oresascended/models/item/sapphire_pickaxe.json
+0f1d9c036c37ec066dd93f225cc815a8bbaf1b19 assets/oresascended/models/item/sapphire_shovel.json
 2d3f9f72ed42ef0370eeeedcefae8179d39734b0 assets/oresascended/models/item/sapphire_sword.json
