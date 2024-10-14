@@ -9,6 +9,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -43,11 +44,18 @@ public class MyDatagenHandler {
                 new MyLanguageProvider(output, existingFileHelper)
         );
         //loot table provider
-//        generator.addProvider(
-//                event.includeServer(),
-//                new LootTableProvider(output, Collections.emptySet(),
-//                        List.of(new LootTableProvider.SubProviderEntry(MyLootTableProvider::new, LootContextParamSets.BLOCK)),
-//                        lookupProvider));
+        generator.addProvider(
+                event.includeServer(),
+                new LootTableProvider(output, Collections.emptySet(),
+                        List.of(new LootTableProvider.SubProviderEntry(MyLootTableProvider::new, LootContextParamSets.BLOCK)),
+                        lookupProvider));
+        //recipe provider
+        generator.addProvider(event.includeServer(), new MyRecipeProvider(output, lookupProvider));
+        //block tag provider
+        BlockTagsProvider blockTagsProvider = new MyBlockTagProvider(output, lookupProvider, existingFileHelper);
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+        //item tag provider
+        generator.addProvider(event.includeServer(), new MyItemTagProvider(output, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
     }
 }

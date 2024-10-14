@@ -19,6 +19,11 @@ public class ItemInit {
                     .fireResistant()
             ));
 
+    public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
+            () -> new Item(new Item.Properties()
+                    .fireResistant()
+            ));
+
     public static final DeferredItem<Item> CELESTIUM = ITEMS.register("celestium",
             () -> new Item(new Item.Properties()
                     .fireResistant()
@@ -27,10 +32,7 @@ public class ItemInit {
 //    public static final DeferredItem<Item> AQUAMARINE = ITEMS.register("aquamarine",
 //            () -> new Item(new Item.Properties()
 //            ));
-//    public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
-//            () -> new Item(new Item.Properties()
-//                    .fireResistant()
-//            ));
+
 //    public static final DeferredItem<Item> OBSIDIAN_RUBY_ALLOY = ITEMS.register("obsidian_ruby_alloy",
 //            () -> new Item(new Item.Properties()
 //                    .fireResistant()

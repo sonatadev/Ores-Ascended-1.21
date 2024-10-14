@@ -1,6 +1,10 @@
 {
+  "block.oresascended.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.oresascended.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.oresascended.ruby_block": "Ruby Block",
+  "block.oresascended.ruby_ore": "Ruby Ore",
   "block.oresascended.sapphire_block": "Sapphire Block",
+  "block.oresascended.sapphire_ore": "Sapphire Ore",
   "item.oresascended.celestium": "Celestium",
   "item.oresascended.celestium_axe": "Celestium Axe",
   "item.oresascended.celestium_boots": "Celestium Boots",
@@ -11,6 +15,7 @@
   "item.oresascended.celestium_pickaxe": "Celestium Pickaxe",
   "item.oresascended.celestium_shovel": "Celestium Shovel",
   "item.oresascended.celestium_sword": "Celestium Sword",
+  "item.oresascended.ruby": "Ruby",
   "item.oresascended.sapphire": "Sapphire",
   "item.oresascended.sapphire_axe": "Sapphire Axe",
   "item.oresascended.sapphire_boots": "Sapphire Boots",

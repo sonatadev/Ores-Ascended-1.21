@@ -1,0 +1,4 @@
+// 1.21	2024-10-14T13:37:47.6151767	Tags for minecraft:block mod id oresascended
+fd212789da2bb159c0ba92995de0fdac5146a18b data/minecraft/tags/block/mineable/pickaxe.json
+01be4e9137711ec856752f862012784a81d0c30b data/minecraft/tags/block/needs_diamond_tool.json
+610c9d89dd22dd72e4a57bcd8a347edc6f01efc6 data/oresascended/tags/block/needs_sapphire_tool.json

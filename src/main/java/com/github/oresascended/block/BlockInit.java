@@ -20,7 +20,38 @@ public class BlockInit {
     private static final String MODID = OresAscended.MODID;
     //blocks container
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Creates a new Block with the id "oresascended:sapphire_block", combining the namespace and path
+
+    //ores
+    public static final DeferredBlock<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.AMETHYST)
+                    .explosionResistance(6f)
+                    .strength(6f)
+                    .requiresCorrectToolForDrops()
+            ));
+    public static final DeferredBlock<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.AMETHYST)
+                    .explosionResistance(6f)
+                    .strength(6f)
+                    .requiresCorrectToolForDrops()
+            ));
+    public static final DeferredBlock<Block> RUBY_ORE = registerBlock("ruby_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.AMETHYST)
+                    .explosionResistance(7f)
+                    .strength(8f)
+                    .requiresCorrectToolForDrops()
+            ));
+    public static final DeferredBlock<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.AMETHYST)
+                    .explosionResistance(8f)
+                    .strength(9f)
+                    .requiresCorrectToolForDrops()
+            ));
+
+
     public static final DeferredBlock<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST)
