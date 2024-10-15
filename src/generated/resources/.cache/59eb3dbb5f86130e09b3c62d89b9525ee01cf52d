@@ -1,5 +1,6 @@
-// 1.21	2024-10-14T13:37:47.6166512	Loot Tables
-941ad43047a62d4f9d33980e27fa8384bb40eec7 data/oresascended/loot_table/blocks/deepslate_ruby_ore.json
+// 1.21	2024-10-15T12:48:40.5204397	Loot Tables
+29902ce9ac4496085d9b5610cac0088fbec4a1d0 data/oresascended/loot_table/blocks/aetherium_block.json
+9ecad8f175578560b45dd7b3872ceefcd4fc3279 data/oresascended/loot_table/blocks/aetherium_ore.json
 3bcdc2dfb502ca0c782e007987f6db976958b12f data/oresascended/loot_table/blocks/deepslate_sapphire_ore.json
 898bf99efb1e7c9759298963e9d8ca6e66f08a86 data/oresascended/loot_table/blocks/ruby_block.json
 2939775a52dbafaa47b6d307de061a4fa769eb2c data/oresascended/loot_table/blocks/ruby_ore.json

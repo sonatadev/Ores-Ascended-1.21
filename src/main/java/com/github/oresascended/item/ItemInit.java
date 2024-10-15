@@ -23,6 +23,10 @@ public class ItemInit {
             () -> new Item(new Item.Properties()
                     .fireResistant()
             ));
+    public static final DeferredItem<Item> AETHERIUM = ITEMS.register("aetherium",
+            () -> new Item(new Item.Properties()
+                    .fireResistant()
+            ));
     //alloyed fuels
     public static final DeferredItem<Item> BRIGHTCOAL = ITEMS.register("brightcoal",
             () -> new Item(new Item.Properties()
@@ -121,41 +125,57 @@ public class ItemInit {
                     MyToolTiers.CELESTIUM_TIER, 0, -3.0f
             ))));
 
-
     //armor stuff
     //sapphire
     public static final DeferredItem<ArmorItem> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()
-                    .durability(ArmorItem.Type.HELMET.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(27))
             ));
     public static final DeferredItem<ArmorItem> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()
-                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(27))
             ));
     public static final DeferredItem<ArmorItem> SAPPHIRE_LEGGINGS = ITEMS.register("sapphire_leggings",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()
-                    .durability(ArmorItem.Type.LEGGINGS.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(27))
             ));
     public static final DeferredItem<ArmorItem> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()
-                    .durability(ArmorItem.Type.BOOTS.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(27))
+            ));
+    //ruby
+    public static final DeferredItem<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet",
+            () -> new ArmorItem(MyArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(38))
+            ));
+    public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate",
+            () -> new ArmorItem(MyArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(38))
+            ));
+    public static final DeferredItem<ArmorItem> RUBY_LEGGINGS = ITEMS.register("ruby_leggings",
+            () -> new ArmorItem(MyArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(38))
+            ));
+    public static final DeferredItem<ArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots",
+            () -> new ArmorItem(MyArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(38))
             ));
     //celestium
     public static final DeferredItem<ArmorItem> CELESTIUM_HELMET = ITEMS.register("celestium_helmet",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()
-                    .durability(ArmorItem.Type.HELMET.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.CELESTIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(40))
             ));
     public static final DeferredItem<ArmorItem> CELESTIUM_CHESTPLATE = ITEMS.register("celestium_chestplate",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()
-                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.CELESTIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(40))
             ));
     public static final DeferredItem<ArmorItem> CELESTIUM_LEGGINGS = ITEMS.register("celestium_leggings",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()
-                    .durability(ArmorItem.Type.LEGGINGS.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.CELESTIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(40))
             ));
     public static final DeferredItem<ArmorItem> CELESTIUM_BOOTS = ITEMS.register("celestium_boots",
-            () -> new ArmorItem(ArmorMaterials.DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()
-                    .durability(ArmorItem.Type.BOOTS.getDurability(19))
+            () -> new ArmorItem(MyArmorMaterials.CELESTIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(40))
             ));
 
 

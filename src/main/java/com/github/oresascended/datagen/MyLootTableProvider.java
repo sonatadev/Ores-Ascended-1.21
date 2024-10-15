@@ -30,6 +30,7 @@ public class MyLootTableProvider extends BlockLootSubProvider {
         //dropSelf Blocks
         dropSelf(BlockInit.SAPPHIRE_BLOCK.get());
         dropSelf(BlockInit.RUBY_BLOCK.get());
+        dropSelf(BlockInit.AETHERIUM_BLOCK.get());
 
         //dropOre Blocks
         add(BlockInit.SAPPHIRE_ORE.get(),
@@ -38,8 +39,8 @@ public class MyLootTableProvider extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get(), ItemInit.SAPPHIRE.get(), 2, 5));
         add(BlockInit.RUBY_ORE.get(),
                 block -> createOreDrop(BlockInit.RUBY_ORE.get(), ItemInit.RUBY.get()));
-        add(BlockInit.DEEPSLATE_RUBY_ORE.get(),
-                block -> createMultipleOreDrops(BlockInit.DEEPSLATE_RUBY_ORE.get(), ItemInit.RUBY.get(), 2, 5));
+        add(BlockInit.AETHERIUM_ORE.get(),
+                block -> createOreDrop(BlockInit.AETHERIUM_ORE.get(), ItemInit.AETHERIUM.get()));
 
     }
 

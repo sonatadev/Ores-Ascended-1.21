@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aetherium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresascended:aetherium_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresascended:aetherium_from_smelting_aetherium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aetherium_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresascended:aetherium_from_smelting_aetherium_ore"
+    ]
+  }
+}

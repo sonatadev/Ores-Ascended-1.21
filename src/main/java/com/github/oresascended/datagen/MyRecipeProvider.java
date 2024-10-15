@@ -21,7 +21,8 @@ public class MyRecipeProvider extends RecipeProvider implements IConditionBuilde
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> SAPPHIRE_SMELTABLES = List.of(BlockInit.SAPPHIRE_ORE, BlockInit.DEEPSLATE_SAPPHIRE_ORE);
-        List<ItemLike> RUBY_SMELTABLES = List.of(BlockInit.RUBY_ORE, BlockInit.DEEPSLATE_RUBY_ORE);
+        List<ItemLike> RUBY_SMELTABLES = List.of(BlockInit.RUBY_ORE);
+        List<ItemLike> AETHERIUM_SMELTABLES = List.of(BlockInit.AETHERIUM_ORE);
 
         //shaped recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BlockInit.SAPPHIRE_BLOCK.get())
@@ -36,6 +37,12 @@ public class MyRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("BBB")
                 .define('B', ItemInit.RUBY.get())
                 .unlockedBy("has_ruby", has(ItemInit.RUBY)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BlockInit.AETHERIUM_BLOCK.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('B', ItemInit.AETHERIUM.get())
+                .unlockedBy("has_aetherium", has(ItemInit.AETHERIUM)).save(recipeOutput);
 
         //shapeless recipes
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemInit.SAPPHIRE.get(), 9)
@@ -47,10 +54,11 @@ public class MyRecipeProvider extends RecipeProvider implements IConditionBuilde
         //smelting recipes
         oreSmelting(recipeOutput, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ItemInit.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreSmelting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, ItemInit.RUBY.get(), 0.25f, 200, "ruby");
+        oreSmelting(recipeOutput, AETHERIUM_SMELTABLES, RecipeCategory.MISC, ItemInit.AETHERIUM.get(), 0.25f, 200, "aetherium");
 
         oreBlasting(recipeOutput, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ItemInit.SAPPHIRE.get(), 0.25f, 100, "sapphire");
         oreBlasting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, ItemInit.RUBY.get(), 0.25f, 100, "ruby");
-
+        oreBlasting(recipeOutput, AETHERIUM_SMELTABLES, RecipeCategory.MISC, ItemInit.AETHERIUM.get(), 0.25f, 100, "aetherium");
 
 
     }

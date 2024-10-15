@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aetherium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresascended:aetherium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresascended:aetherium_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aetherium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresascended:aetherium_block"
+    ]
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -32,26 +33,24 @@ public class BlockInit {
     public static final DeferredBlock<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST)
-                    .explosionResistance(6f)
-                    .strength(6f)
+                    .explosionResistance(7f)
+                    .strength(7f)
                     .requiresCorrectToolForDrops()
             ));
     public static final DeferredBlock<Block> RUBY_ORE = registerBlock("ruby_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.AMETHYST)
+                    .sound(SoundType.NETHER_ORE)
                     .explosionResistance(7f)
+                    .strength(7f)
+                    .requiresCorrectToolForDrops()
+            ));
+    public static final DeferredBlock<Block> AETHERIUM_ORE = registerBlock("aetherium_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.ANCIENT_DEBRIS)
+                    .explosionResistance(8f)
                     .strength(8f)
                     .requiresCorrectToolForDrops()
             ));
-    public static final DeferredBlock<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.AMETHYST)
-                    .explosionResistance(8f)
-                    .strength(9f)
-                    .requiresCorrectToolForDrops()
-            ));
-
-
     public static final DeferredBlock<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST)
@@ -62,6 +61,13 @@ public class BlockInit {
     public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST_CLUSTER)
+                    .explosionResistance(7f)
+                    .strength(7f)
+                    .requiresCorrectToolForDrops()
+            ));
+    public static final DeferredBlock<Block> AETHERIUM_BLOCK = registerBlock("aetherium_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.NETHERITE_BLOCK)
                     .explosionResistance(8f)
                     .strength(8f)
                     .requiresCorrectToolForDrops()

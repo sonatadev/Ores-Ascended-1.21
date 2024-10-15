@@ -35,9 +35,10 @@ public class MyBlockTagProvider extends BlockTagsProvider {
                 .addTags(BlockTags.NEEDS_IRON_TOOL);
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(BlockInit.RUBY_BLOCK.get())
-                .add(BlockInit.RUBY_ORE.get())
-                .add(BlockInit.DEEPSLATE_RUBY_ORE.get());
-        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+                .add(BlockInit.RUBY_ORE.get());
+        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+                .add(BlockInit.AETHERIUM_BLOCK.get())
+                .add(BlockInit.AETHERIUM_ORE.get());
 
         //sapphire tags
         tag(TagsInit.Blocks.NEEDS_SAPPHIRE_TOOL)
@@ -48,7 +49,7 @@ public class MyBlockTagProvider extends BlockTagsProvider {
                 .remove(TagsInit.Blocks.NEEDS_SAPPHIRE_TOOL);
         //ruby tags
         tag(TagsInit.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL); //NEED TO CHANGE ASAP
+                .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
 
         tag(TagsInit.Blocks.INCORRECT_FOR_RUBY)
                 .addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)

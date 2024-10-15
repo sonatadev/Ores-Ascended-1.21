@@ -1,7 +1,8 @@
-// 1.21	2024-10-14T18:50:56.0802693	Tags for minecraft:item mod id oresascended
-b38b11ee0b851ed856730d343a587bdf7c48435b data/minecraft/tags/item/axes.json
-8b93132264d609bfb3a40b03cae00699a9942b5f data/minecraft/tags/item/hoes.json
-d19a5c1914ccc1dd863729445b154e369819c688 data/minecraft/tags/item/pickaxes.json
-effc31f95287430b82f6fb5a449c8b48e1db0bbb data/minecraft/tags/item/shovels.json
-985a7a481cb1e10cef4b3355113b2aacb2826df4 data/minecraft/tags/item/swords.json
+// 1.21	2024-10-15T12:48:40.5361751	Tags for minecraft:item mod id oresascended
+4a09e73aad2de86ec557ddc2336186a4e89c6e67 data/minecraft/tags/item/axes.json
+6cee24f864eb650e982dff0c3c92c19dbb9ae13f data/minecraft/tags/item/hoes.json
+ebce705caaab48b3362d865555a938837c60afb5 data/minecraft/tags/item/pickaxes.json
+6b450cdb06e497610acf28f75e2c5c209e041742 data/minecraft/tags/item/shovels.json
+1bc9c91b5ed49d4b35de0ae3c008c6d55f200546 data/minecraft/tags/item/swords.json
+87770e78946b8ff5283019251d08ba8c640ae969 data/minecraft/tags/item/trimmable_armor.json
 1f49d251be683a2d43d864c3209193e570cf43e5 data/oresascended/tags/item/alloyed_items.json
