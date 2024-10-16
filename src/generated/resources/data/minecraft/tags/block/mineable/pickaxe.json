@@ -1,11 +1,11 @@
 {
   "values": [
+    "oresascended:sapphire_block",
+    "oresascended:ruby_block",
+    "oresascended:aetherium_block",
     "oresascended:sapphire_ore",
     "oresascended:deepslate_sapphire_ore",
     "oresascended:ruby_ore",
-    "oresascended:aetherium_ore",
-    "oresascended:sapphire_block",
-    "oresascended:ruby_block",
-    "oresascended:aetherium_block"
+    "oresascended:aetherium_ore"
   ]
 }

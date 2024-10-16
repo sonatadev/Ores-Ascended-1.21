@@ -1,8 +1,8 @@
-// 1.21	2024-10-15T12:48:40.5361751	Tags for minecraft:item mod id oresascended
+// 1.21	2024-10-16T12:29:52.7393366	Tags for minecraft:item mod id oresascended
 4a09e73aad2de86ec557ddc2336186a4e89c6e67 data/minecraft/tags/item/axes.json
 6cee24f864eb650e982dff0c3c92c19dbb9ae13f data/minecraft/tags/item/hoes.json
 ebce705caaab48b3362d865555a938837c60afb5 data/minecraft/tags/item/pickaxes.json
 6b450cdb06e497610acf28f75e2c5c209e041742 data/minecraft/tags/item/shovels.json
 1bc9c91b5ed49d4b35de0ae3c008c6d55f200546 data/minecraft/tags/item/swords.json
-87770e78946b8ff5283019251d08ba8c640ae969 data/minecraft/tags/item/trimmable_armor.json
-1f49d251be683a2d43d864c3209193e570cf43e5 data/oresascended/tags/item/alloyed_items.json
+11a909b3c50245eea69540ce59ddf44979110157 data/minecraft/tags/item/trimmable_armor.json
+a68f1d1463e53b46e638fc46fd7b4f97fc860714 data/oresascended/tags/item/alloyed_items.json

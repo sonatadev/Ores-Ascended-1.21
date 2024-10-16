@@ -1,4 +1,4 @@
-package com.github.oresascended.item;
+package com.github.oresascended.tags;
 
 import com.github.oresascended.OresAscended;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +16,7 @@ public class TagsInit {
         //needs tags
         public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = createTag("needs_sapphire_tool");
         public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
+        public static final TagKey<Block> NEEDS_AETHERIUM_TOOL = createTag("needs_aetherium_tool");
 
         public static final TagKey<Block> NEEDS_AQUAMARINE_TOOL = createTag("needs_aquamarine_tool");
         public static final TagKey<Block> NEEDS_CELESTIUM_TOOL = createTag("needs_celestium_tool");
@@ -23,6 +24,7 @@ public class TagsInit {
         //incorrect for tags
         public static final TagKey<Block> INCORRECT_FOR_SAPPHIRE = createTag("incorrect_for_sapphire");
         public static final TagKey<Block> INCORRECT_FOR_RUBY = createTag("incorrect_for_ruby");
+        public static final TagKey<Block> INCORRECT_FOR_AETHERIUM = createTag("incorrect_for_aetherium");
 
         public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE = createTag("incorrect_for_aquamarine");
         public static final TagKey<Block> INCORRECT_FOR_CELESTIUM = createTag("incorrect_for_celestium");

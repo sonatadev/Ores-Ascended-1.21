@@ -1,12 +1,12 @@
 package com.github.oresascended.datagen;
 
 import com.github.oresascended.block.BlockInit;
-import com.github.oresascended.item.ItemInit;
+import com.github.oresascended.block.OreBlockInit;
+import com.github.oresascended.item.misc.OreInit;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -19,6 +19,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class MyLootTableProvider extends BlockLootSubProvider {
     protected MyLootTableProvider(HolderLookup.Provider pRegistries) {
@@ -33,20 +34,23 @@ public class MyLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlockInit.AETHERIUM_BLOCK.get());
 
         //dropOre Blocks
-        add(BlockInit.SAPPHIRE_ORE.get(),
-                block -> createOreDrop(BlockInit.SAPPHIRE_ORE.get(), ItemInit.SAPPHIRE.get()));
-        add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get(),
-                block -> createMultipleOreDrops(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get(), ItemInit.SAPPHIRE.get(), 2, 5));
-        add(BlockInit.RUBY_ORE.get(),
-                block -> createOreDrop(BlockInit.RUBY_ORE.get(), ItemInit.RUBY.get()));
-        add(BlockInit.AETHERIUM_ORE.get(),
-                block -> createOreDrop(BlockInit.AETHERIUM_ORE.get(), ItemInit.AETHERIUM.get()));
+        add(OreBlockInit.SAPPHIRE_ORE.get(),
+                block -> createOreDrop(OreBlockInit.SAPPHIRE_ORE.get(), OreInit.SAPPHIRE.get()));
+        add(OreBlockInit.DEEPSLATE_SAPPHIRE_ORE.get(),
+                block -> createMultipleOreDrops(OreBlockInit.DEEPSLATE_SAPPHIRE_ORE.get(), OreInit.SAPPHIRE.get(), 2, 5));
+        add(OreBlockInit.RUBY_ORE.get(),
+                block -> createOreDrop(OreBlockInit.RUBY_ORE.get(), OreInit.RUBY.get()));
+        add(OreBlockInit.AETHERIUM_ORE.get(),
+                block -> createOreDrop(OreBlockInit.AETHERIUM_ORE.get(), OreInit.AETHERIUM.get()));
 
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return BlockInit.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return Stream.concat(
+                BlockInit.BLOCKS.getEntries().stream().map(Holder::value),
+                OreBlockInit.ORE_BLOCKS.getEntries().stream().map(Holder::value)
+        )::iterator;
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

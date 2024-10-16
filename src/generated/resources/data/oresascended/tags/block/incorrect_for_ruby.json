@@ -1,6 +1,7 @@
 {
   "remove": [
-    "#oresascended:needs_ruby_tool"
+    "#oresascended:needs_ruby_tool",
+    "#oresascended:needs_aetherium_tool"
   ],
   "values": [
     "#minecraft:incorrect_for_netherite_tool"

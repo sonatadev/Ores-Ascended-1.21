@@ -1,10 +1,14 @@
-// 1.21	2024-10-15T12:48:40.5204397	Tags for minecraft:block mod id oresascended
-1cfa313f890665c493867d38c9cf771807b24346 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21	2024-10-16T13:59:09.347985	Tags for minecraft:block mod id oresascended
+28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_diamond_tool.json
+28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_gold_tool.json
+28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_iron_tool.json
+732861665f4ebb62f67c3ceba5f55ad65429354a data/minecraft/tags/block/mineable/pickaxe.json
 64507160efa653fd54c1e4e6ceeb167055952e2f data/minecraft/tags/block/needs_diamond_tool.json
 01be4e9137711ec856752f862012784a81d0c30b data/minecraft/tags/block/needs_iron_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/neoforge/tags/block/needs_gold_tool.json
 5590c4aed90d2302c243f590796818e177bc6cf9 data/neoforge/tags/block/needs_netherite_tool.json
-767cd346c4b29835c8692eba437c7e4381da5594 data/oresascended/tags/block/incorrect_for_ruby.json
+aa727c731ac427e0cbf156e1ac63c9cd529ff780 data/oresascended/tags/block/incorrect_for_ruby.json
 ec845f03f3890eaa610c2df0715b2ef0819beb0b data/oresascended/tags/block/incorrect_for_sapphire.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/oresascended/tags/block/needs_aetherium_tool.json
 28664f209d59643cd660ffecc4ec013d2b0ccf68 data/oresascended/tags/block/needs_ruby_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresascended/tags/block/needs_sapphire_tool.json

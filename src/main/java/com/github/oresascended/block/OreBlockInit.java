@@ -1,8 +1,7 @@
 package com.github.oresascended.block;
 
 import com.github.oresascended.OresAscended;
-import com.github.oresascended.item.blocks.BlockItemInit;
-import com.github.oresascended.item.blocks.OreBlockItemInit;
+import com.github.oresascended.item.misc.ItemInit;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,12 +13,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class BlockInit {
+public class OreBlockInit {
     private static final String MODID = OresAscended.MODID;
 
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+    public static final DeferredRegister.Blocks ORE_BLOCKS = DeferredRegister.createBlocks(MODID);
 
-    public static final DeferredBlock<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
+    public static final DeferredBlock<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .sound(SoundType.AMETHYST)
                     .explosionResistance(6f)
@@ -27,47 +26,42 @@ public class BlockInit {
                     .requiresCorrectToolForDrops()
             ));
 
-    public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock("ruby_block",
+    public static final DeferredBlock<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .sound(SoundType.AMETHYST)
                     .explosionResistance(7f)
                     .strength(7f)
                     .requiresCorrectToolForDrops()
             ));
 
-    public static final DeferredBlock<Block> AETHERIUM_BLOCK = registerBlock("aetherium_block",
+    public static final DeferredBlock<Block> RUBY_ORE = registerBlock("ruby_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.NETHERITE_BLOCK)
+                    .sound(SoundType.NETHER_ORE)
+                    .explosionResistance(7f)
+                    .strength(7f)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final DeferredBlock<Block> AETHERIUM_ORE = registerBlock("aetherium_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.ANCIENT_DEBRIS)
                     .explosionResistance(8f)
                     .strength(8f)
                     .requiresCorrectToolForDrops()
             ));
 
-//    public static final DeferredBlock<Block> OBSIDIAN_RUBY_BLOCK = registerBlock("obsidian_ruby_block",
-//            () -> new Block(BlockBehaviour.Properties.of()
-//                    .sound(SoundType.LARGE_AMETHYST_BUD)
-//                    .explosionResistance(12f)
-//                    .strength(12f)
-//                    .requiresCorrectToolForDrops()
-//            ));
-
     //register blocks
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
-        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        DeferredBlock<T> toReturn = ORE_BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
     //register block items
     private static final <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
-        if(name.contains("ore")){
-            OreBlockItemInit.ORE_BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-        }else{
-            BlockItemInit.BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-        }
-
+        ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-    //register to the event bus
+    //registr to the event bus
     public static void register(IEventBus eventBus){
-        BLOCKS.register(eventBus);
+        ORE_BLOCKS.register(eventBus);
     }
 }

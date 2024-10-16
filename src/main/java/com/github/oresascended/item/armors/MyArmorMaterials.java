@@ -1,6 +1,8 @@
-package com.github.oresascended.item;
+package com.github.oresascended.item.armors;
 
 import com.github.oresascended.OresAscended;
+import com.github.oresascended.item.misc.AlloyInit;
+import com.github.oresascended.item.misc.OreInit;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -27,7 +29,7 @@ public class MyArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 8);
                 attribute.put(ArmorItem.Type.HELMET, 3);
                 attribute.put(ArmorItem.Type.BODY, 11);
-            }), 12, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> ItemInit.SAPPHIRE.get());
+            }), 12, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> OreInit.SAPPHIRE.get());
     public static final Holder<ArmorMaterial> RUBY_ARMOR_MATERIAL = register("ruby", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 3);
@@ -35,7 +37,7 @@ public class MyArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 8);
                 attribute.put(ArmorItem.Type.HELMET, 3);
                 attribute.put(ArmorItem.Type.BODY, 11);
-            }), 16, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> ItemInit.RUBY.get());
+            }), 16, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> OreInit.RUBY.get());
     public static final Holder<ArmorMaterial> CELESTIUM_ARMOR_MATERIAL = register("celestium", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 4);
@@ -43,7 +45,7 @@ public class MyArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 9);
                 attribute.put(ArmorItem.Type.HELMET, 4);
                 attribute.put(ArmorItem.Type.BODY, 12);
-            }), 20, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> ItemInit.CELESTIUM.get());
+            }), 20, 3f, 0f, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> AlloyInit.CELESTIUM.get());
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance, Holder<SoundEvent> soundEvent,

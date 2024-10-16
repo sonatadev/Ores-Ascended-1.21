@@ -1,25 +1,28 @@
 package com.github.oresascended;
 
 import com.github.oresascended.block.BlockInit;
-import com.github.oresascended.item.ItemInit;
-import net.minecraft.data.DataGenerator;
+import com.github.oresascended.block.OreBlockInit;
+import com.github.oresascended.item.misc.AlloyInit;
+import com.github.oresascended.item.misc.FuelInit;
+import com.github.oresascended.item.misc.ItemInit;
+import com.github.oresascended.item.misc.OreInit;
+import com.github.oresascended.item.armors.BootsInit;
+import com.github.oresascended.item.armors.ChestplateInit;
+import com.github.oresascended.item.armors.HelmetInit;
+import com.github.oresascended.item.armors.LeggingsInit;
+import com.github.oresascended.item.blocks.BlockItemInit;
+import com.github.oresascended.item.blocks.OreBlockItemInit;
+import com.github.oresascended.item.tools.*;
+import com.github.oresascended.util.GroupItems;
+import com.github.oresascended.util.GroupTabs;
+import com.github.oresascended.util.ModCreativeModeTabs;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -28,14 +31,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(OresAscended.MODID)
@@ -44,25 +41,34 @@ public class OresAscended {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public OresAscended(IEventBus modEventBus, ModContainer modContainer) {
-        //stuff registration
-        ItemInit.register(modEventBus);
-        BlockInit.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
+        //blocks registration
+        BlockInit.BLOCKS.register(modEventBus);
+        OreBlockInit.ORE_BLOCKS.register(modEventBus);
 
+        GroupItems.initializeRegisters();
+        //item registration
+        for(DeferredRegister<? extends Item> armorRegister : GroupItems.armorRegisters){
+            armorRegister.register(modEventBus);
+        }
+        //tool registration
+        for(DeferredRegister<? extends Item> itemRegister : GroupItems.itemRegisters){
+            itemRegister.register(modEventBus);
+        }
+        //armor registration
+        for(DeferredRegister<? extends Item> toolRegister : GroupItems.toolRegisters){
+            toolRegister.register(modEventBus);
+        }
+        GroupItems.addAllItemRegisters();
+        GroupTabs.initializeRegisters();
+        //creative tabs registration
+        for(DeferredRegister<CreativeModeTab> tabRegister : GroupTabs.tabRegisters){
+            tabRegister.register(modEventBus);
+        }
+        //event bus registration
         NeoForge.EVENT_BUS.register(this);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ItemInit.SAPPHIRE);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(BlockInit.SAPPHIRE_BLOCK);
-        }
     }
 
     @SubscribeEvent
@@ -75,7 +81,6 @@ public class OresAscended {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
     }
 

@@ -1,16 +1,20 @@
     package com.github.oresascended.datagen;
 
-    import com.github.oresascended.ModCreativeModeTabs;
+    import com.github.oresascended.util.GroupItems;
+    import com.github.oresascended.util.ModCreativeModeTabs;
     import com.github.oresascended.OresAscended;
-    import com.github.oresascended.block.BlockInit;
-    import com.github.oresascended.item.ItemInit;
+    import com.github.oresascended.item.misc.ItemInit;
+    import com.github.oresascended.item.armors.BootsInit;
+    import com.github.oresascended.item.armors.ChestplateInit;
+    import com.github.oresascended.item.armors.HelmetInit;
+    import com.github.oresascended.item.armors.LeggingsInit;
+    import com.github.oresascended.item.tools.*;
     import net.minecraft.data.PackOutput;
     import net.minecraft.world.item.CreativeModeTab;
     import net.minecraft.world.item.Item;
-    import net.minecraft.world.level.block.Block;
     import net.neoforged.neoforge.common.data.ExistingFileHelper;
     import net.neoforged.neoforge.common.data.LanguageProvider;
-    import net.neoforged.neoforge.registries.DeferredHolder;
+    import net.neoforged.neoforge.registries.DeferredRegister;
 
     import java.util.function.Supplier;
 
@@ -24,6 +28,33 @@
                     // The locale to use. You may use multiple language providers for different locales.
                     "en_us"
             );
+        }
+
+        @Override
+        protected void addTranslations() {
+            for(DeferredRegister<? extends Item> itemRegister : GroupItems.allItems){
+                itemRegister.getEntries().forEach(deferredItem -> {
+                    String name = formatName(deferredItem.getId().getPath());
+                    addItem(deferredItem, name);
+                });
+            }
+
+            ModCreativeModeTabs.CREATIVE_MODE_TABS.getEntries().forEach(deferredTab -> {
+                String name = formatName(deferredTab.getId().getPath());
+                addCreativeModeTab(deferredTab, name);
+            });
+        }
+
+        public void addCreativeModeTab(Object key, String name) {
+            CreativeModeTab tab;
+            if (key instanceof Supplier) {
+                tab = ((Supplier<? extends CreativeModeTab>) key).get();
+            } else if (key instanceof CreativeModeTab) {
+                tab = (CreativeModeTab) key;
+            } else {
+                throw new IllegalArgumentException("Invalid key type: " + key.getClass().getName());
+            }
+            add(tab.getDisplayName().getString(), name);
         }
 
         private String formatName(String input) {
@@ -40,52 +71,19 @@
             return name.toString();
         }
 
-        @Override
-        protected void addTranslations() {
-            // Adds a block translation.
-          /*  for(DeferredHolder<Block, ? extends Block> deferredBlock : BlockInit.BLOCKS.getEntries()){
-                String name = formatName(deferredBlock.getId().getPath());
-                //add(deferredBlock.get(), name);
-                addBlock(deferredBlock, name);
-            }*/
-
-            // Adds an item translation.
-            for(DeferredHolder<Item, ? extends Item> deferredItem : ItemInit.ITEMS.getEntries()){
-                String name = formatName(deferredItem.getId().getPath());
-                //add(deferredItem.get(), name);
-                addItem(deferredItem, name);
-            }
-
-            //adds creative mode tabs translation
-            for(DeferredHolder<CreativeModeTab, ? extends CreativeModeTab> deferredTab : ModCreativeModeTabs.CREATIVE_MODE_TAB.getEntries()){
-                String name = formatName(deferredTab.getId().getPath());
-                addCreativeModeTab(deferredTab, name);
-            }
-            
-            
-
-            // Adds an item stack translation. This is mainly for items that have NBT-specific names.
+        // Adds an item stack translation. This is mainly for items that have NBT-specific names.
         //    add(MyItems.EXAMPLE_ITEM_STACK.get(), "Example Item");
-    //        addItemStack(MyItems.EXAMPLE_ITEM_STACK, "Example Item");
-    //
-    //
-    //
-    //        // Adds an entity type translation.
-    //        add(MyEntityTypes.EXAMPLE_ENTITY_TYPE.get(), "Example Entity");
-    //        addEntityType(MyEntityTypes.EXAMPLE_ENTITY_TYPE, "Example Entity");
-    //        // Adds an enchantment translation.
-    //        add(MyEnchantments.EXAMPLE_ENCHANTMENT.get(), "Example Enchantment");
-    //        addEnchantment(MyEnchantments.EXAMPLE_ENCHANTMENT, "Example Enchantment");
-    //        // Adds a mob effect translation.
-    //        add(MyMobEffects.EXAMPLE_MOB_EFFECT.get(), "Example Effect");
-    //        addEffect(MyMobEffects.EXAMPLE_MOB_EFFECT, "Example Effect");
-        }
-
-        public void addCreativeModeTab(Supplier<? extends CreativeModeTab> key, String name) {
-            add(key.get(), name);
-        }
-
-        public void add(CreativeModeTab key, String name) {
-            add(key.getDisplayName().getString(), name);
-        }
+        //        addItemStack(MyItems.EXAMPLE_ITEM_STACK, "Example Item");
+        //
+        //
+        //
+        //        // Adds an entity type translation.
+        //        add(MyEntityTypes.EXAMPLE_ENTITY_TYPE.get(), "Example Entity");
+        //        addEntityType(MyEntityTypes.EXAMPLE_ENTITY_TYPE, "Example Entity");
+        //        // Adds an enchantment translation.
+        //        add(MyEnchantments.EXAMPLE_ENCHANTMENT.get(), "Example Enchantment");
+        //        addEnchantment(MyEnchantments.EXAMPLE_ENCHANTMENT, "Example Enchantment");
+        //        // Adds a mob effect translation.
+        //        add(MyMobEffects.EXAMPLE_MOB_EFFECT.get(), "Example Effect");
+        //        addEffect(MyMobEffects.EXAMPLE_MOB_EFFECT, "Example Effect");
     }

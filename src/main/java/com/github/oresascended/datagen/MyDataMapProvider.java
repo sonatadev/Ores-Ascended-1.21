@@ -1,6 +1,6 @@
 package com.github.oresascended.datagen;
 
-import com.github.oresascended.item.ItemInit;
+import com.github.oresascended.item.misc.FuelInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -23,8 +23,8 @@ public class MyDataMapProvider extends DataMapProvider {
     @Override
     protected void gather() {
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
-                .add(ItemInit.BRIGHTCOAL.getId(), new FurnaceFuel(3200), false);
+                .add(FuelInit.BRIGHTCOAL.getId(), new FurnaceFuel(3200), false);
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
-                .add(ItemInit.SHADOWFIRE_CORE.getId(), new FurnaceFuel(6400), false);
+                .add(FuelInit.SHADOWFIRE_CORE.getId(), new FurnaceFuel(6400), false);
     }
 }

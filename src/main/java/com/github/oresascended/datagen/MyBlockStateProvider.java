@@ -2,6 +2,7 @@ package com.github.oresascended.datagen;
 
 import com.github.oresascended.OresAscended;
 import com.github.oresascended.block.BlockInit;
+import com.github.oresascended.block.OreBlockInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +21,9 @@ public class MyBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         BlockInit.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach(block -> {
             blockWithItem(block);
+        });
+        OreBlockInit.ORE_BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach(ore_block -> {
+            blockWithItem(ore_block);
         });
     }
     //register as block items

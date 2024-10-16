@@ -1,9 +1,12 @@
 package com.github.oresascended.datagen;
 
 import com.github.oresascended.OresAscended;
-import com.github.oresascended.block.BlockInit;
-import com.github.oresascended.item.ItemInit;
-import net.minecraft.core.registries.BuiltInRegistries;
+import com.github.oresascended.item.armors.BootsInit;
+import com.github.oresascended.item.armors.ChestplateInit;
+import com.github.oresascended.item.armors.HelmetInit;
+import com.github.oresascended.item.armors.LeggingsInit;
+import com.github.oresascended.item.tools.*;
+import com.github.oresascended.util.GroupItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -15,8 +18,8 @@ import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.LinkedHashMap;
 
@@ -41,59 +44,63 @@ public class MyItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        // Simple item JSON generation
-        for (DeferredHolder<Item, ? extends Item> deferredItem : ItemInit.ITEMS.getEntries()) {
-            if (deferredItem.get() instanceof BlockItem || deferredItem.get() instanceof TieredItem) {
-                continue;
-            }
-            basicItem(deferredItem.get());
+        // Simple item model generation
+        for(DeferredRegister<? extends Item> deferredRegister : GroupItems.itemRegisters){
+            deferredRegister.getEntries().forEach(deferredItem -> {
+                if(!(deferredItem.get() instanceof BlockItem)){
+                    basicItem(deferredItem.get());
+                }
+            });
         }
-        //tools
-        //sapphire
-        handheldItem(ItemInit.SAPPHIRE_SWORD);
-        handheldItem(ItemInit.SAPPHIRE_PICKAXE);
-        handheldItem(ItemInit.SAPPHIRE_AXE);
-        handheldItem(ItemInit.SAPPHIRE_SHOVEL);
-        handheldItem(ItemInit.SAPPHIRE_HOE);
-        //ruby
-        handheldItem(ItemInit.RUBY_SWORD);
-        handheldItem(ItemInit.RUBY_PICKAXE);
-        handheldItem(ItemInit.RUBY_AXE);
-        handheldItem(ItemInit.RUBY_SHOVEL);
-        handheldItem(ItemInit.RUBY_HOE);
-        //aetherium
 
-        //aquamarine
+        //tool item model generation
+        SwordInit.SWORDS.getEntries().forEach(deferredSword -> {
+            DeferredItem<SwordItem> swordItem = (DeferredItem<SwordItem>) deferredSword;
+            handheldItem(swordItem);
+        });
 
-        //celestium
-        handheldItem(ItemInit.CELESTIUM_SWORD);
-        handheldItem(ItemInit.CELESTIUM_PICKAXE);
-        handheldItem(ItemInit.CELESTIUM_AXE);
-        handheldItem(ItemInit.CELESTIUM_SHOVEL);
-        handheldItem(ItemInit.CELESTIUM_HOE);
+        PickaxeInit.PICKAXES.getEntries().forEach(deferredPickaxe -> {
+            DeferredItem<PickaxeItem> pickaxeItem = (DeferredItem<PickaxeItem>) deferredPickaxe;
+            handheldItem(pickaxeItem);
+        });
 
-        //stellarium
+        AxeInit.AXES.getEntries().forEach(deferredAxe -> {
+            DeferredItem<AxeItem> axeItem = (DeferredItem<AxeItem>) deferredAxe;
+            handheldItem(axeItem);
+        });
 
-        //armor trims
-        //sapphire
-        trimmedArmorItem(ItemInit.SAPPHIRE_BOOTS);
-        trimmedArmorItem(ItemInit.SAPPHIRE_LEGGINGS);
-        trimmedArmorItem(ItemInit.SAPPHIRE_CHESTPLATE);
-        trimmedArmorItem(ItemInit.SAPPHIRE_HELMET);
-        //ruby
-        trimmedArmorItem(ItemInit.RUBY_BOOTS);
-        trimmedArmorItem(ItemInit.RUBY_LEGGINGS);
-        trimmedArmorItem(ItemInit.RUBY_CHESTPLATE);
-        trimmedArmorItem(ItemInit.RUBY_HELMET);
-        //celestium
-        trimmedArmorItem(ItemInit.CELESTIUM_BOOTS);
-        trimmedArmorItem(ItemInit.CELESTIUM_LEGGINGS);
-        trimmedArmorItem(ItemInit.CELESTIUM_CHESTPLATE);
-        trimmedArmorItem(ItemInit.CELESTIUM_HELMET);
+        ShovelInit.SHOVELS.getEntries().forEach(deferredShovel -> {
+            DeferredItem<ShovelItem> shovelItem = (DeferredItem<ShovelItem>) deferredShovel;
+            handheldItem(shovelItem);
+        });
 
+        HoeInit.HOES.getEntries().forEach(deferredHoe -> {
+            DeferredItem<HoeItem> hoeItem = (DeferredItem<HoeItem>) deferredHoe;
+            handheldItem(hoeItem);
+        });
+
+        //armor trim generation
+        HelmetInit.HELMETS.getEntries().forEach(deferredHelmet -> {
+            DeferredItem<ArmorItem> helmetItem = (DeferredItem<ArmorItem>) deferredHelmet;
+            trimmedArmorItem(helmetItem);
+        });
+
+        ChestplateInit.CHESTPLATES.getEntries().forEach(deferredChestplate -> {
+            DeferredItem<ArmorItem> chestplateItem = (DeferredItem<ArmorItem>) deferredChestplate;
+            trimmedArmorItem(chestplateItem);
+        });
+
+        LeggingsInit.LEGGINGS.getEntries().forEach(deferredLeggings -> {
+            DeferredItem<ArmorItem> leggingsItem = (DeferredItem<ArmorItem>) deferredLeggings;
+            trimmedArmorItem(leggingsItem);
+        });
+
+        BootsInit.BOOTS.getEntries().forEach(deferredBoots -> {
+            DeferredItem<ArmorItem> bootsItem = (DeferredItem<ArmorItem>) deferredBoots;
+            trimmedArmorItem(bootsItem);
+        });
 
     }
-
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
@@ -101,7 +108,7 @@ public class MyItemModelProvider extends ItemModelProvider {
                 ResourceLocation.fromNamespaceAndPath(OresAscended.MODID,"item/" + item.getId().getPath()));
     }
 
-    //i have no idea how this works tbh
+    //I have no idea how this works tbh
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {
         final String MOD_ID = OresAscended.MODID; // Change this to your mod id
 
