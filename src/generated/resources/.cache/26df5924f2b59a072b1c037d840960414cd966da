@@ -1,8 +1,8 @@
-// 1.21	2024-10-16T13:59:09.347985	Tags for minecraft:block mod id oresascended
+// 1.21	2024-10-17T11:41:09.4310074	Tags for minecraft:block mod id oresascended
 28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_diamond_tool.json
 28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_gold_tool.json
 28664f209d59643cd660ffecc4ec013d2b0ccf68 data/minecraft/tags/block/incorrect_for_iron_tool.json
-732861665f4ebb62f67c3ceba5f55ad65429354a data/minecraft/tags/block/mineable/pickaxe.json
+dc5d308c59783d00fbf792eb20be70e47795a5a4 data/minecraft/tags/block/mineable/pickaxe.json
 64507160efa653fd54c1e4e6ceeb167055952e2f data/minecraft/tags/block/needs_diamond_tool.json
 01be4e9137711ec856752f862012784a81d0c30b data/minecraft/tags/block/needs_iron_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/neoforge/tags/block/needs_gold_tool.json

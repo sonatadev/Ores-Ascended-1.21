@@ -13,11 +13,12 @@ import com.github.oresascended.item.armors.LeggingsInit;
 import com.github.oresascended.item.blocks.BlockItemInit;
 import com.github.oresascended.item.blocks.OreBlockItemInit;
 import com.github.oresascended.item.tools.*;
-import com.github.oresascended.util.GroupItems;
-import com.github.oresascended.util.GroupTabs;
-import com.github.oresascended.util.ModCreativeModeTabs;
+import com.github.oresascended.util.*;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
@@ -58,6 +59,20 @@ public class OresAscended {
         for(DeferredRegister<? extends Item> toolRegister : GroupItems.toolRegisters){
             toolRegister.register(modEventBus);
         }
+
+        //block entity registration
+        GroupEntities.initializeRegisters();
+        for(DeferredRegister<? extends BlockEntityType> blockEntityRegister : GroupEntities.entityRegisters){
+            blockEntityRegister.register(modEventBus);
+        }
+
+        //menu registration
+        GroupMenuTypes.initializeRegisters();
+        for(DeferredRegister<MenuType<?>> menuTypeRegister : GroupMenuTypes.menuTypeRegisters){
+            menuTypeRegister.register(modEventBus);
+        }
+
+
         GroupItems.addAllItemRegisters();
         GroupTabs.initializeRegisters();
         //creative tabs registration

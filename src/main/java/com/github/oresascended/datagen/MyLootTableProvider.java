@@ -32,6 +32,7 @@ public class MyLootTableProvider extends BlockLootSubProvider {
         dropSelf(BlockInit.SAPPHIRE_BLOCK.get());
         dropSelf(BlockInit.RUBY_BLOCK.get());
         dropSelf(BlockInit.AETHERIUM_BLOCK.get());
+        dropSelf(BlockInit.CONTAINER_BLOCK.get());
 
         //dropOre Blocks
         add(OreBlockInit.SAPPHIRE_ORE.get(),

@@ -1,6 +1,7 @@
 package com.github.oresascended.block;
 
 import com.github.oresascended.OresAscended;
+import com.github.oresascended.item.blocks.OreBlockItemInit;
 import com.github.oresascended.item.misc.ItemInit;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -58,10 +59,6 @@ public class OreBlockInit {
     }
     //register block items
     private static final <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
-        ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-    //registr to the event bus
-    public static void register(IEventBus eventBus){
-        ORE_BLOCKS.register(eventBus);
+        OreBlockItemInit.ORE_BLOCK_ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 }
