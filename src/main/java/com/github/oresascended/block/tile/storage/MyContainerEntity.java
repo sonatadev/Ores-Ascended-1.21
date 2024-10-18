@@ -4,8 +4,10 @@ import com.github.oresascended.block.tile.BlockEntityInit;
 import com.github.oresascended.menu.MyContainerMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -55,5 +57,26 @@ public class MyContainerEntity extends BaseContainerBlockEntity implements MenuP
         return player.distanceToSqr(this.getBlockPos().getX(),
                 this.getBlockPos().getY(),
                 this.getBlockPos().getZ()) <= 8 * 8; // 8 blocks squared
+    }
+
+    @Override
+    public void setRemoved() {
+        super.setRemoved();
+
+        if (!this.level.isClientSide) { // Ensure this runs on the server-side
+            for (int i = 0; i < items.size(); i++) {
+                ItemStack itemStack = items.get(i);
+                if (!itemStack.isEmpty()) {
+                    // Create an ItemEntity and drop it in the world
+                    ItemEntity itemEntity = new ItemEntity(this.level,
+                            this.getBlockPos().getX(),
+                            this.getBlockPos().getY(),
+                            this.getBlockPos().getZ(),
+                            itemStack.copy()); // Use copy to avoid altering the original stack
+
+                    this.level.addFreshEntity(itemEntity); // Drop the item in the world
+                }
+            }
+        }
     }
 }
