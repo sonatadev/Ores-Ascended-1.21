@@ -13,12 +13,17 @@ import com.github.oresascended.item.armors.LeggingsInit;
 import com.github.oresascended.item.blocks.BlockItemInit;
 import com.github.oresascended.item.blocks.OreBlockItemInit;
 import com.github.oresascended.item.tools.*;
+import com.github.oresascended.menu.MenuInit;
+import com.github.oresascended.menu.MyContainerMenu;
+import com.github.oresascended.menu.screen.MyContainerScreen;
 import com.github.oresascended.util.*;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
@@ -72,7 +77,6 @@ public class OresAscended {
             menuTypeRegister.register(modEventBus);
         }
 
-
         GroupItems.addAllItemRegisters();
         GroupTabs.initializeRegisters();
         //creative tabs registration
@@ -96,6 +100,13 @@ public class OresAscended {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+        }
+
+        @SubscribeEvent
+        public static void onRegisterScreens(RegisterMenuScreensEvent event) {
+            // Register your screen with the corresponding menu type
+            event.register(MenuInit.MY_CONTAINER_MENU_TYPE.get(), MyContainerScreen::new);
         }
     }
 

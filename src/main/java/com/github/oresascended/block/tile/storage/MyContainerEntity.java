@@ -5,14 +5,16 @@ import com.github.oresascended.menu.MyContainerMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MyContainerEntity extends BaseContainerBlockEntity {
+public class MyContainerEntity extends BaseContainerBlockEntity implements MenuProvider {
     // Assuming that you want a fixed size for the container
     private static final int CONTAINER_SIZE = 27; // Change this to your desired size
     private final NonNullList<ItemStack> items; // Make items a member variable
@@ -24,7 +26,7 @@ public class MyContainerEntity extends BaseContainerBlockEntity {
 
     @Override
     protected Component getDefaultName() {
-        return Component.translatable("container.oresascended.storage_container");
+        return Component.translatable("oresascended.storage_container");
     }
 
     @Override
@@ -47,5 +49,11 @@ public class MyContainerEntity extends BaseContainerBlockEntity {
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE; // Return the fixed size of the container
+    }
+
+    public boolean isWithinDistance(Player player) {
+        return player.distanceToSqr(this.getBlockPos().getX(),
+                this.getBlockPos().getY(),
+                this.getBlockPos().getZ()) <= 8 * 8; // 8 blocks squared
     }
 }

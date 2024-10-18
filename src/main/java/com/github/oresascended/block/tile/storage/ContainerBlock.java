@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.InteractionHand;
@@ -31,30 +30,24 @@ public class ContainerBlock extends Block implements EntityBlock {
     }
 
     @Override
-    public InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
-        // This method handles interaction without an item
-        if (!pLevel.isClientSide) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof MyContainerEntity) {
-                // Open the custom menu
-                pPlayer.openMenu((MenuProvider) blockEntity);
-            }
-        }
-        return InteractionResult.SUCCESS; // Indicate the interaction was successful
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        openContainerMenu(level, pos, player);
+        return InteractionResult.SUCCESS; // Indicate interaction was successful
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
-        // This method handles interaction while holding an item
-        if (!pLevel.isClientSide) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        openContainerMenu(level, pos, player);
+        return ItemInteractionResult.SUCCESS; // Indicate interaction was successful and item was consumed
+    }
+
+    private void openContainerMenu(Level level, BlockPos pos, Player player) {
+        if (!level.isClientSide) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof MyContainerEntity) {
-                // Open the custom menu
-                pPlayer.openMenu((MenuProvider) blockEntity);
-                // Consume the item if needed, otherwise return PASS
-                return ItemInteractionResult.CONSUME; // Indicate the item was consumed
+                // Open the custom menu using the block entity as a MenuProvider
+                player.openMenu((MenuProvider) blockEntity);
             }
         }
-        return ItemInteractionResult.FAIL; // Indicate that the interaction did not consume the item
     }
 }

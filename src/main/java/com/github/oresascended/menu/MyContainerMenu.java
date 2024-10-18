@@ -15,8 +15,10 @@ public class MyContainerMenu extends AbstractContainerMenu {
         this.containerEntity = containerEntity; // Ensure this is initialized properly
 
         // Add slots for the container
-        for (int i = 0; i < containerEntity.getContainerSize(); i++) {
-            this.addSlot(new Slot(containerEntity, i, 44 + (i % 9) * 18, 20 + (i / 9) * 18));
+        for (int i = 0; i < 27; i++) { // Loop for 27 slots
+            int slotX = 8 + (i % 9) * 18; // X position for the slots
+            int slotY = 18 + (i / 9) * 18; // Y position for the slots
+            this.addSlot(new Slot(containerEntity, i, slotX, slotY));
         }
 
         // Add player inventory slots
@@ -33,12 +35,35 @@ public class MyContainerMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-        return null;
+    public ItemStack quickMoveStack(Player player, int index) {
+        Slot slot = this.slots.get(index);
+        if (slot.hasItem()) {
+            ItemStack itemStack = slot.getItem();
+            ItemStack itemStackCopy = itemStack.copy();
+
+            // Check if the item is in the container's slots
+            if (index < containerEntity.getContainerSize()) {
+                // Try to move it to the player's inventory
+                if (!this.moveItemStackTo(itemStack, containerEntity.getContainerSize(), this.slots.size(), true)) {
+                    return ItemStack.EMPTY; // If it couldn't be moved, return empty
+                }
+            } else {
+                // Try to move it to the container
+                if (!this.moveItemStackTo(itemStack, 0, containerEntity.getContainerSize(), false)) {
+                    return ItemStack.EMPTY; // If it couldn't be moved, return empty
+                }
+            }
+
+            slot.set(itemStack.isEmpty() ? ItemStack.EMPTY : itemStack);
+            return itemStackCopy; // Return the item that was moved
+        }
+        return ItemStack.EMPTY; // If the slot was empty
     }
 
+
+
     @Override
-    public boolean stillValid(Player pPlayer) {
-        return false;
+    public boolean stillValid(Player player) {
+        return containerEntity.isWithinDistance(player);
     }
 }
